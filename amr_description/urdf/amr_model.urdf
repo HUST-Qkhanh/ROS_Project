@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="amr_model">
+  <!--xacro:include filename="$(find amr_description)/urdf/amr_model.gazebo.xacro"/-->
+  
+
+  <link name="base_footprint"/>
+
+  <link
+  name="base_link">
+  <inertial>
+    <origin
+      xyz="0.014554 0.00016485 0.10329"
+      rpy="0 0 0" />
+    <mass
+      value="23.478" />
+    <inertia
+      ixx="0.18885"
+      ixy="0.00049266"
+      ixz="0.00020396"
+      iyy="0.16875"
+      iyz="-1.6092E-06"
+      izz="0.23165" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/base_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/base_link.STL" />
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_footprint_joint" type="fixed" >
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+  <origin xyz="0.0 0.0 0.0225" rpy="0.0 0.0 0.0"/>
+</joint>  
+
+<link
+  name="left_wheel_link">
+  <inertial>
+    <origin
+      xyz="-5.9137E-06 9.0517E-06 -0.0021218"
+      rpy="0 0 0" />
+    <mass
+      value="0.42831" />
+    <inertia
+      ixx="0.00075914"
+      ixy="-1.8039E-08"
+      ixz="-3.3253E-08"
+      iyy="0.00075916"
+      iyz="5.0898E-08"
+      izz="0.001427" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/left_wheel_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/left_wheel_link.STL" />
+    </geometry>
+  </collision>
+</link>
+
+<joint
+  name="left_wheel_joint"
+  type="continuous">
+  <origin
+    xyz="-0.0062617 0.25592 0.0535"
+    rpy="1.5708 0 -3.1171" />
+  <parent
+    link="base_link" />
+  <child
+    link="left_wheel_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+
+<link
+  name="right_wheel_link">
+  <inertial>
+    <origin
+      xyz="6.2045E-06 8.855E-06 0.0021218"
+      rpy="0 0 0" />
+    <mass
+      value="0.42831" />
+    <inertia
+      ixx="0.00075914"
+      ixy="1.8515E-08"
+      ixz="-3.4888E-08"
+      iyy="0.00075916"
+      iyz="-4.9791E-08"
+      izz="0.001427" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/right_wheel_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/right_wheel_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="right_wheel_joint"
+  type="continuous">
+  <origin
+    xyz="0.0062617 -0.25592 0.0535"
+    rpy="1.5708 0 -3.1171" />
+  <parent
+    link="base_link" />
+  <child
+    link="right_wheel_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster1_link">
+  <inertial>
+    <origin
+      xyz="-0.013313 -0.00013952 -0.03353"
+      rpy="0 0 0" />
+    <mass
+      value="0.17421" />
+    <inertia
+      ixx="0.00016022"
+      ixy="3.8557E-09"
+      ixz="-5.136E-06"
+      iyy="0.0001233"
+      iyz="1.5883E-10"
+      izz="0.00018347" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster1_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster1_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster1_joint"
+  type="continuous">
+  <origin
+    xyz="0.2878 -0.21302 0.0935"
+    rpy="0 0 3.1416" />
+  <parent
+    link="base_link" />
+  <child
+    link="caster1_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster1_wheel_link">
+  <inertial>
+    <origin
+      xyz="-8.1046E-15 2.2204E-16 -2.1372E-15"
+      rpy="0 0 0" />
+    <mass
+      value="0.26385" />
+    <inertia
+      ixx="0.00016528"
+      ixy="3.735E-21"
+      ixz="4.6341E-20"
+      iyy="0.00016528"
+      iyz="1.6485E-20"
+      izz="0.0002273" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster1_wheel_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster1_wheel_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster1_wheel_joint"
+  type="continuous">
+  <origin
+    xyz="0.0215 -0.0005 -0.074"
+    rpy="-1.5708 0 0" />
+  <parent
+    link="caster1_link" />
+  <child
+    link="caster1_wheel_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+
+<link
+  name="caster2_link">
+  <inertial>
+    <origin
+      xyz="-0.013313 -0.00013953 -0.03353"
+      rpy="0 0 0" />
+    <mass
+      value="0.17421" />
+    <inertia
+      ixx="0.00016022"
+      ixy="3.8383E-09"
+      ixz="-5.136E-06"
+      iyy="0.0001233"
+      iyz="1.4002E-10"
+      izz="0.00018347" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster2_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster2_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster2_joint"
+  type="continuous">
+  <origin
+    xyz="-0.27703 -0.22684 0.0935"
+    rpy="0 0 3.1416" />
+  <parent
+    link="base_link" />
+  <child
+    link="caster2_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster2_wheel_link">
+  <inertial>
+    <origin
+      xyz="-8.9789E-15 0 -7.3552E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.26385" />
+    <inertia
+      ixx="0.00016528"
+      ixy="-3.2044E-22"
+      ixz="-8.6895E-21"
+      iyy="0.00016528"
+      iyz="1.61E-20"
+      izz="0.0002273" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster2_wheel_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster2_wheel_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster2_wheel_joint"
+  type="continuous">
+  <origin
+    xyz="0.0215 -0.0005 -0.074"
+    rpy="-1.5708 0 0" />
+  <parent
+    link="caster2_link" />
+  <child
+    link="caster2_wheel_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster3_link">
+  <inertial>
+    <origin
+      xyz="-0.013313 -0.00013953 -0.03353"
+      rpy="0 0 0" />
+    <mass
+      value="0.17421" />
+    <inertia
+      ixx="0.00016022"
+      ixy="3.8392E-09"
+      ixz="-5.136E-06"
+      iyy="0.0001233"
+      iyz="1.3855E-10"
+      izz="0.00018347" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster3_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster3_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster3_joint"
+  type="continuous">
+  <origin
+    xyz="-0.2878 0.21302 0.0935"
+    rpy="0 0 3.1416" />
+  <parent
+    link="base_link" />
+  <child
+    link="caster3_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster3_wheel_link">
+  <inertial>
+    <origin
+      xyz="-8.6459E-15 -8.3267E-17 9.992E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.26385" />
+    <inertia
+      ixx="0.00016528"
+      ixy="1.5381E-20"
+      ixz="8.085E-21"
+      iyy="0.00016528"
+      iyz="-1.2328E-20"
+      izz="0.0002273" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster3_wheel_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster3_wheel_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster3_wheel_joint"
+  type="continuous">
+  <origin
+    xyz="0.0215000000000007 0.000499999999999723 -0.0739999999999998"
+    rpy="1.5707963267949 0 0" />
+  <parent
+    link="caster3_link" />
+  <child
+    link="caster3_wheel_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster4_link">
+  <inertial>
+    <origin
+      xyz="-0.013313 -0.00013952 -0.03353"
+      rpy="0 0 0" />
+    <mass
+      value="0.17421" />
+    <inertia
+      ixx="0.00016022"
+      ixy="3.8579E-09"
+      ixz="-5.136E-06"
+      iyy="0.0001233"
+      iyz="1.5609E-10"
+      izz="0.00018347" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster4_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster4_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster4_joint"
+  type="continuous">
+  <origin
+    xyz="0.27703 0.22684 0.0935"
+    rpy="0 0 3.1416" />
+  <parent
+    link="base_link" />
+  <child
+    link="caster4_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="caster4_wheel_link">
+  <inertial>
+    <origin
+      xyz="-9.3814E-15 5.5511E-17 2.7756E-15"
+      rpy="0 0 0" />
+    <mass
+      value="0.26385" />
+    <inertia
+      ixx="0.00016528"
+      ixy="-8.3685E-22"
+      ixz="-3.0215E-20"
+      iyy="0.00016528"
+      iyz="-2.2882E-20"
+      izz="0.0002273" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster4_wheel_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/caster4_wheel_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="caster4_wheel_joint"
+  type="continuous">
+  <origin
+    xyz="0.0215 0.0005 -0.074"
+    rpy="1.5708 0 0" />
+  <parent
+    link="caster4_link" />
+  <child
+    link="caster4_wheel_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+<link
+  name="lidar_link">
+  <inertial>
+    <origin
+      xyz="0 0 -0.02"
+      rpy="0 0 0" />
+    <mass
+      value="0" />
+    <inertia
+      ixx="0"
+      ixy="0"
+      ixz="0"
+      iyy="0"
+      iyz="0"
+      izz="0" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 -0.02"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/lidar_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <!--collision>
+    <origin
+      xyz="0 0 -0.02"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://amr_description/meshes/lidar_link.STL" />
+    </geometry>
+  </collision>
+-->
+</link>
+<joint
+  name="lidar_joint"
+  type="fixed">
+  <origin
+    xyz="0.27091 0.0066283 0.27"
+    rpy="0 0 0" />
+  <parent
+    link="base_link" />
+  <child
+    link="lidar_link" />
+  <axis
+    xyz="0 0 1" />
+</joint>
+
+  <!--IMU-->
+  <link name="imu_link"/>  
+  <joint name="imu_joint" type="fixed" >
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.014527 -0.00019118 0.1033" rpy="0 0 0" />
+  </joint>
+    
+
+
+
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+</gazebo>  
+
+<gazebo reference="left_wheel_link">
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+
+  <gazebo reference="caster1_link">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="caster2_link">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="caster3_link"> 
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="caster4_link">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="caster1_wheel_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>      
+  <gazebo reference="caster2_wheel_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+  <gazebo reference="caster3_wheel_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+  <gazebo reference="caster4_wheel_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+
+  <gazebo reference="lidar_link">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="lds_lfcd_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>3.5</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>lidar_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="imu_link">
+    <sensor type="imu" name="imu">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>imu_link</bodyName>
+      <frameName>imu_link</frameName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>0</updateRate>
+      <imu>
+        <noise>
+          <type>gaussian</type>
+          <rate>
+            <mean>0.0</mean>
+            <stddev>2e-4</stddev>
+            <bias_mean>0.0000075</bias_mean>
+            <bias_stddev>0.0000008</bias_stddev>
+          </rate>
+          <accel>
+            <mean>0.0</mean>
+            <stddev>1.7e-2</stddev>
+            <bias_mean>0.1</bias_mean>
+            <bias_stddev>0.001</bias_stddev>
+          </accel>
+        </noise>
+      </imu>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="amr_controller" filename="libgazebo_ros_diff_drive.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <publishOdomTF>true</publishOdomTF>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishTf>true</publishTf>
+      <publishWheelJointState>true</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+      <updateRate>30</updateRate>
+      <leftJoint>left_wheel_joint</leftJoint>
+      <rightJoint>right_wheel_joint</rightJoint>
+      <wheelSeparation>0.512</wheelSeparation>
+      <wheelDiameter>0.152</wheelDiameter>
+      <wheelAcceleration>1</wheelAcceleration>
+      <wheelTorque>50</wheelTorque>
+      <rosDebugLevel>na</rosDebugLevel>
+    </plugin>
+  </gazebo>
+</robot>
